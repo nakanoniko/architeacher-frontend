@@ -1,0 +1,8 @@
+<div style="height:129px;width:100%;"></div>
+
+
+<div *ngFor="let item of getArray()"[ngSwitch]="item[0]">
+    <grid-a *ngSwitchCase="0" [array]="item[1]"></grid-a>
+    <grid-b *ngSwitchCase="1" [array]="item[1]"></grid-b>
+    <grid-c *ngSwitchCase="2" [array]="item[1]"></grid-c>
+</div>

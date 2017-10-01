@@ -1,0 +1,269 @@
+<div style="height:129px;width:100%;"></div>
+
+<div class="px-5">
+    <archi-heading
+            [text]="style?.name"
+            [margin]="'y'"
+            [size]="'huge'">
+    </archi-heading>
+</div>
+
+<ng-template #elseCol3><div class="col-3"></div></ng-template>
+<ng-template #elseCol><div class="col px-3"></div></ng-template>
+
+<div class="container mb-5">
+    <div class="row mb-3 no-gutters">
+
+        <div class="col-1"></div>
+        <div class="col-3" *ngIf="previous; else elseCol3">
+            <archi-underline [text]="'Предшественник'"></archi-underline>
+            <div class="mb-3 ">
+                <archi-button [url]="'/styles/'+previous.id" [color]="colorService.colors.green" [name]="previous.name"></archi-button>
+            </div>
+            <div>
+                <archi-heading [text]="previous.date | date_approx" align="'left'"></archi-heading>
+            </div>
+        </div>
+
+        <div class="col px-3" *ngIf="previous; else elseCol">
+            <div class="pb-2 mb-3"></div>
+            <archi-underline [text]="''"></archi-underline>
+        </div>
+
+        <div class="col">
+            <img class="svg" *ngIf="style" [src]="'/images/uploads/'+style.door_handle_img_path">
+        </div>
+
+        <div class="col px-3" *ngIf="following; else elseCol">
+            <div class="pb-2 mb-3"></div>
+            <archi-underline [text]="''"></archi-underline>
+        </div>
+
+        <div class="col-3 text-right" *ngIf="following; else elseCol3">
+            <archi-underline [text]="'Последователь'" [align]="'right'"></archi-underline>
+            <div class="mb-3">
+                <archi-button [url]="'/styles/'+following.id" [name]="following.name" [color]="colorService.colors.green"></archi-button>
+            </div>
+            <div>
+                <archi-heading [text]="following.date | date_approx" align="'right'"></archi-heading>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-8 offset-2 pt-3 mb-3 border-special">
+            <archi-heading [text]="style?.name | lowercase" [size]="'big'"></archi-heading>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-3">
+            <archi-underline [text]="'Расцвет'"></archi-underline>
+            <div>
+                <archi-heading [text]="style?.date | date_approx" [align]="'left'"></archi-heading>
+            </div>
+        </div>
+        <div class="col"></div>
+        <div class="col-3">
+            <archi-underline [text]="'Философия'" [align]="'right'"></archi-underline>
+            <div>
+                <archi-heading [text]="style?.philosophy" [align]="'right'"></archi-heading>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+
+<archi-heading [text]="'Основная информация'" [margin]="'b'" [size]="'big'"></archi-heading>
+
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-7">
+            <archi-text [text]="style?.text"></archi-text>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+<archi-heading *ngIf="style?.buildings.length>0" [text]="'Примеры'" [margin]="'b'" [size]="'big'"></archi-heading>
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-10 offset-1">
+            <archi-carousel
+                    *ngIf="style?.buildings.length>0"
+                    [img]="'path'"
+                    [title]="'title'"
+                    [title_info]="'title_info'"
+                    [array]="style?.buildings"
+                    [url]="'buildings'"
+                    [id]="'id'"
+                    [color]="colorService.colors.red">
+            </archi-carousel>
+        </div>
+    </div>
+</div>
+
+<archi-heading [text]="'Идеология'" [size]="'big'" [margin]="'b'"></archi-heading>
+
+<div class="container mb-5">
+    <div class="row mb-3">
+        <div class="col-1"></div>
+        <div class="col-3 pt-5" *ngIf="previous; else elseCol3">
+            <archi-underline [text]="previous.name"></archi-underline>
+            <div>
+                <archi-heading [text]="previous.ideology" [align]="'left'"></archi-heading>
+            </div>
+        </div>
+
+        <div class="col align-self-center" *ngIf="previous; else elseCol">
+            <div class="pb-2 mb-3"></div>
+            <archi-underline [text]="''"></archi-underline>
+        </div>
+
+        <div class="col">
+            <img class="svg" *ngIf="style" [src]="'/images/uploads/'+style.column_img_path">
+        </div>
+
+        <div class="col align-self-center" *ngIf="following; else elseCol">
+            <div class="pb-2 mb-3"></div>
+            <archi-underline [text]="''"></archi-underline>
+        </div>
+
+        <div class="col-3 pt-5" *ngIf="following; else elseCol3">
+            <archi-underline [text]="following.name" [align]="'right'"></archi-underline>
+            <div>
+                <archi-heading [text]="following.ideology" [align]="'right'"></archi-heading>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="d-inline-block text-left" style="width:50%">
+                        <!--<div class="underline underline-black pb-2 mb-3">{{style?.name}}</div>-->
+                        <archi-underline [text]="style?.name"></archi-underline>
+                        <!--<h1 class="text-center">{{style?.philosophy}}</h1>-->
+                        <archi-heading [text]="style?.ideology"></archi-heading>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<archi-heading *ngIf="style?.elements.length>0" [text]="'Характерные элементы'" [margin]="'b'" [size]="'big'"></archi-heading>
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="carousel slide" id="elements" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item justify-content-center"
+                         *ngFor="let entry of getElements()"
+                         [class.active]="getElements()[0]==entry" >
+                        <div class="card col-3 p-0 mx-2">
+                            <div style="height:200px" class="flex-column justify-content-center">
+                                <a routerLink="/elements/{{entry[0].id}}"
+                                   (click)="navigate($event,'/elements/'+entry[0].id, colorService.colors.orange)">
+                                    <img class="p-3 card-img-top img-fluid" style="max-height:100%" [src]="'/images/uploads/'+entry[0].path">
+                                </a>
+                            </div>
+                            <div class="card-block d-flex flex-column justify-content-end text-left p-0">
+                                <div class="card-title d-flex flex-column justify-content-end" style="height:120px">
+                                    <div class="p-3"><archi-heading [align]="'left'" [text]="entry[0].name"></archi-heading></div>
+                                    <archi-underline></archi-underline>
+                                </div>
+                                <div class="card-text px-3 pb-3" style="height:110px">
+                                    <p>{{entry[0].description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="entry[1]" class="card col-3 p-0 mx-2">
+                            <div style="height:200px" class="flex-column justify-content-center">
+                                <a routerLink="/elements/{{entry[1].id}}"
+                                   (click)="navigate($event,'/elements/'+entry[1].id, colorService.colors.orange)">
+                                    <img class="p-3 card-img-top img-fluid" style="max-height:100%" [src]="'/images/uploads/'+entry[1].path">
+                                </a>
+                            </div>
+                            <div class="card-block d-flex flex-column justify-content-end text-left p-0">
+                                <div class="card-title d-flex flex-column justify-content-end" style="height:120px">
+                                    <div class="p-3"><archi-heading [align]="'left'" [text]="entry[1].name"></archi-heading></div>
+                                    <archi-underline></archi-underline>
+                                </div>
+                                <div class="card-text px-3 pb-3" style="height:110px">
+                                    <p>{{entry[1].description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="entry[2]" class="card col-3 p-0 mx-2">
+                            <div style="height:200px" class="flex-column justify-content-center">
+                                <a routerLink="/elements/{{entry[2].id}}"
+                                   (click)="navigate($event,'/elements/'+entry[1].id, colorService.colors.orange)">
+                                    <img class="p-3 card-img-top img-fluid" style="max-height:100%" [src]="'/images/uploads/'+entry[2].path">
+                                </a>
+                            </div>
+                            <div class="card-block d-flex flex-column justify-content-end text-left p-0">
+                                <div class="card-title d-flex flex-column justify-content-end" style="height:120px">
+                                    <div class="p-3"><archi-heading [align]="'left'" [text]="entry[2].name"></archi-heading></div>
+                                    <archi-underline></archi-underline>
+                                </div>
+                                <div class="card-text px-3 pb-3" style="height:110px">
+                                    <p>{{entry[2].description}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div *ngIf="getElements().length>1">
+                    <a  class="carousel-control-prev" href="#elements" role="button" data-slide="prev">
+                        <span style="color:black; font-size:2rem;" aria-hidden="true">🢀</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a  class="carousel-control-next" href="#elements" role="button" data-slide="next">
+                        <span style="color:black; font-size:2rem;" aria-hidden="true">🢂</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-7">
+            <archi-heading [align]="'left'" [text]="style?.fact" [condensed]="true"></archi-heading>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+<archi-heading *ngIf="style?.architects.length>0" [text]="'Архитектор'" [margin]="'b'" [size]="'big'"></archi-heading>
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-10 offset-1">
+            <archi-carousel
+                    *ngIf="style?.architects.length>0"
+                    [array]="style?.architects"
+                    [img]="'path'"
+                    [title]="'surname'"
+                    [title_info]="'name'"
+                    [title_info_2]="'patronymic'"
+                    [carousel_id]="'carousel_architects'"
+                    [url]="'architects'"
+                    [id]="'id'"
+                    [color]="colorService.colors.blue">
+            </archi-carousel>
+        </div>
+    </div>
+</div>

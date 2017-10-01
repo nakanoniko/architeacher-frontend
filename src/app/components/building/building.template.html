@@ -1,0 +1,154 @@
+<archi-leading *ngIf="building"
+               [img]="'/images/uploads/'+building.leading_img_path"
+               [title]="building.title"
+               [title_info]="building.title_info">
+</archi-leading>
+
+<archi-heading [text]="'Основная информация'" [margin]="'b'" [size]="'big'"></archi-heading>
+
+<div class="container mb-5">
+    <div class="row mb-5">
+        <div class="col-1"></div>
+        <div class="col border-bottom">
+            <div class="row mb-4">
+                <div class="col">
+                    <archi-underline [text]="'Годы строительства'"></archi-underline>
+                    <archi-heading [align]="'left'" [smallHeight]="true" [text]="building?.year_build_start" [size]="'huge'"></archi-heading>
+                    <archi-heading [align]="'left'" [smallHeight]="true" [text]="building?.year_build_end" [size]="'huge'"></archi-heading>
+                </div>
+                <div class="col-1"></div>
+                <div class="col">
+                    <archi-underline [text]="'Стиль'"></archi-underline>
+                    <div class="mb-4" *ngFor="let style of building?.styles">
+                        <archi-button
+                                [name]="style.name"
+                                [color]="colorService.colors.green"
+                                [url]="'/styles/'+style.id">
+                        </archi-button>
+                    </div>
+                    <archi-underline [text]="'Район'"></archi-underline>
+                    <div class="pb-1 mb-4">
+                        <archi-heading [text]="district?.name" [align]="'left'"></archi-heading>
+                        <p>{{district?.description}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <archi-underline [text]="'Архитектор'"></archi-underline>
+                    <div class="mb-4" *ngFor="let architect of building?.architects">
+                        <archi-button
+                                [name]="architect.name"
+                                [color]="colorService.colors.blue"
+                                [url]="'/architects/'+architect.id">
+                        </archi-button>
+                    </div>
+                    <archi-heading *ngIf="building?.architects.length == 0" [text]="'неизвестен'" [align]="'left'"></archi-heading>
+                </div>
+                <div class="col-1"></div>
+                <div class="col">
+                    <archi-underline [text]="'Метро'"></archi-underline>
+                    <div class="pb-1 mb-4">
+                        <archi-heading [text]="metro_station?.name" [align]="'left'"></archi-heading>
+                        <h1>
+                            <span *ngFor="let route of metro_routes">
+                                <span class="circle" [style.background-color]="route.color"></span>
+                            </span>
+                        </h1>
+                        <p>{{metro_station?.description}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <archi-underline [text]="'Адрес'"></archi-underline>
+                    <div class="pb-1 mb-4">
+                        <archi-heading [text]="building?.address" [align]="'left'"></archi-heading>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+                <div class="col">
+                    <archi-underline [text]="'Административный округ'"></archi-underline>
+                    <div class="pb-1 mb-4">
+                        <archi-heading [text]="region?.abbr" [align]="'left'"></archi-heading>
+                        <p>{{region?.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1 border-bottom d-flex flex-row align-items-stretch ">
+            <div style="width:50%" class="border-right"></div>
+        </div>
+        <div class="col-3 border-bottom">
+            <div *ngFor="let fact of building?.number_facts">
+                <div class="mb-2">
+                    <archi-heading [align]="'right'" [text]="fact.number" [size]="'huge'"></archi-heading>
+                    <archi-heading [align]="'right'" [text]="fact.name"></archi-heading>
+                    <archi-underline></archi-underline>
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col">
+            <archi-heading
+                    *ngFor="let fact of building?.text_facts"
+                    [text]="fact.text"
+                    [align]="'left'"
+                    [margin]="'b'"
+                    [condensed]="true">
+            </archi-heading>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-3">
+            <div class="px-3" *ngFor="let style of building?.styles">
+                <img class="svg mb-2" *ngIf="'building'" [src]="'/images/uploads/'+style.path">
+                <p class="text-center">{{style.name}}</p>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+
+<archi-heading [text]="'История строения'" [margin]="'b'" [size]="'big'"></archi-heading>
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-7">
+            <archi-text [text]="building?.text"></archi-text>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+
+<archi-heading [text]="'Иллюстрации'" [margin]="'b'" [size]="'big'"></archi-heading>
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-3">
+            <div *ngFor="let image of building?.images">
+                <div class="mb-4 text-center bc-red-hover c-white-hover">
+
+                    <archi-button
+                            [size]="2"
+                            [light]="true"
+                            (click)="selectImage(image)"
+                            [border]="false"
+                            [name]="image.name"
+                            [class.underline-black]="image==getImage()"
+                            class="underline">
+                    </archi-button>
+                </div>
+            </div>
+        </div>
+        <div class="col-7" *ngIf="getImage()">
+            <img style="width:100%" [src]="'/images/uploads/' + getImage().path">
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

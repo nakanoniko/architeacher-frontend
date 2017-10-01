@@ -1,0 +1,90 @@
+<archi-leading
+        *ngIf="architect"
+        [img]="architect?.img_path?'/images/uploads/'+architect.img_path:'/images/static/mask-main.png'"
+        [title]="architect?.surname"
+        [title_info]="architect?.name + ' ' + architect?.patronymic">
+</archi-leading>
+
+<archi-heading [text]="'Основная информация'" [size]="'big'" [margin]="'b'"></archi-heading>
+
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-1 pl-4"></div>
+        <div class="col-3 border-right pl-0">
+            <archi-underline [text]="'Архитектурные стили'"></archi-underline>
+            <div class="mb-3" *ngFor="let style of architect?.styles">
+                <archi-button [url]="'/styles/'+style.id" [name]="style.name" [color]="colorService.colors.green"></archi-button>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="row mb-5">
+                <div class="col-6 border-right">
+                    <archi-underline [text]="'Годы жизни'"></archi-underline>
+                    <ng-template #alive>
+                        <archi-heading [smallHeight]="true" [size]="'huge'" [text]="'-'"></archi-heading>
+                    </ng-template>
+
+                    <ng-template #unknown>
+                        <archi-heading [smallHeight]="true" [size]="'huge'" [text]="'?'"></archi-heading>
+                    </ng-template>
+
+                    <archi-heading [smallHeight]="true" [size]="'huge'" [text]="architect.born" *ngIf="architect?.born; else unknown"></archi-heading>
+
+                    <div *ngIf="!architect?.alive; else alive">
+                        <archi-heading [smallHeight]="true" [size]="'huge'" [text]="architect.died" *ngIf="architect?.died; else unknown"></archi-heading>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <archi-underline [text]="'Место рождения'"></archi-underline>
+                    <archi-heading [align]="'left'" [text]="architect?.place_of_birth"></archi-heading>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col">
+                    <archi-heading [text]="architect?.quote" [align]="'left'" [condensed]="true"></archi-heading>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 mb-3" *ngFor="let fact of architect?.facts">
+                    <archi-underline [text]="fact.name"></archi-underline>
+                    <archi-heading [text]="fact.text" align="'left'"></archi-heading>
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+
+<archi-heading [size]="'big'" [text]="'Биография'" [margin]="'b'"></archi-heading>
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-7">
+            <archi-text [text]="architect?.text"></archi-text>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+<archi-heading *ngIf="architect?.buildings.length>0" [text]="'Постройки'" [margin]="'b'" [size]="'big'"></archi-heading>
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-10 offset-1">
+            <archi-carousel
+                    *ngIf="architect"
+                    [array]="architect.buildings"
+                    [img]="'path'"
+                    [title]="'title'"
+                    [title_info]="'title_info'"
+                    [url]="'buildings'"
+                    [id]="'id'"
+                    [color]="colorService.colors.red">
+
+            </archi-carousel>
+
+        </div>
+    </div>
+</div>

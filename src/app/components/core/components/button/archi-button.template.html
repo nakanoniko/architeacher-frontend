@@ -1,0 +1,10 @@
+<button md-button
+        class="archi-button text-center"
+        (mouseenter)="onMouseEnter()"
+        (mouseleave)="onMouseLeave()"
+        (click)="onClick($event)"
+        [ngClass]="getClasses()"
+        [ngStyle]="getStyles()"
+>
+    {{name}}
+</button>

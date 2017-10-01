@@ -1,0 +1,52 @@
+button.archi-button{
+    padding:.75rem;
+    cursor: pointer;
+    display: block;
+    width:100%;
+    color:black;
+    transition:background-color .333333s, color .333333s;
+}
+
+.archi-button-bordered{
+    border:1px solid black;
+    border-radius:5px;
+}
+
+:host /deep/ span{
+    white-space:normal;
+}
+
+:host{
+    display: flex;
+    flex-direction:column;
+    align-content:center;
+}
+
+.archi-button-full-height{
+    flex:1;
+}
+
+:host /deep/ .archi-button-light .mat-button-ripple *{
+    background-color:rgba(255,255,255,.2);
+}
+
+:host /deep/ button.archi-button:not(.archi-button-sans) span{
+    font-family:"Playfair Display", serif;
+}
+:host /deep/ button.archi-button.archi-button-sans{
+    padding:.25rem;
+}
+:host /deep/ button.archi-button.archi-button-sans span{
+    font-family:"Open Sans", serif;
+    font-size:1.1rem;
+    font-weight:100;
+}
+
+
+button.archi-button:hover{
+    color:white;
+}
+
+button.archi-button:focus{
+    outline:none;
+}

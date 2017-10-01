@@ -1,0 +1,36 @@
+span.circle{
+    display:inline-block;
+    vertical-align: middle;
+    border-radius:50%;
+    width:20px;
+    height: 20px;
+}
+
+.border-right{
+    border-right:1px solid black;
+}
+.border-bottom{
+    border-bottom:1px solid black;
+}
+
+:host /deep/ .btn-option{
+    font-size:48px;
+    font-family: 'Playfair Display', serif!important;
+    height:60px;
+    width:100%;
+}
+
+:host /deep/ a.underline:not(.underline-black){
+    border-bottom-color:transparent;
+    border-radius:0;
+}
+
+:host /deep/ .underline{
+    transition:border-bottom-color .333333s;
+    border-bottom:1px solid transparent;
+}
+
+:host /deep/ .underline-black{
+    border-bottom-color: black;
+    border-radius:0;
+}

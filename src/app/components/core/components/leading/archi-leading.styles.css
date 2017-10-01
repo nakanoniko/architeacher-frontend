@@ -1,0 +1,38 @@
+.img{
+    position:relative;
+    background-color:black;
+}
+
+.margin{
+    margin-bottom:3rem;
+}
+
+.img img{
+    width:100%;
+    opacity:0.8
+}
+
+.img .abs{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+.img .abs-bottom{
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    padding:1rem;
+    color:white;
+}
+
+.img .abs .sticky{
+    position: -webkit-sticky;
+    position:sticky;
+    top:200px;
+    transition: all 1s;
+    color:white;
+    padding:3rem;
+}

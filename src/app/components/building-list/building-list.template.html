@@ -1,0 +1,29 @@
+<agm-map
+        [latitude]="55.77563"
+        [longitude]="37.6272211"
+        [zoom]="10"
+        [styles]="styles"
+        (mapClick)="onMapClick()">
+    <agm-marker
+            *ngFor="let building of buildings; let i = index"
+            [latitude]="building.latitude"
+            [longitude]="building.longitude"
+            [label]="' '"
+            [iconUrl]="'/images/static/marker.png'"
+            (markerClick)="onMarkerClick(i)">
+        <agm-info-window [isOpen]="openWindows[i]">
+            <a routerLink="/buildings/{{building.id}}"
+               (click)="navigate($event,'/buildings/'+building.id,colorService.colors.red)">
+                <archi-leading
+                        [size]="'500px'"
+                        [title]="building.title"
+                        [title_info]="building.title_info"
+                        [title_size]="'common'"
+                        [title_info_size]="'default'"
+                        [margin]="false"
+                        [scroll]="false"
+                        [img]="'/images/uploads/'+building.leading_img_path"></archi-leading>
+            </a>
+        </agm-info-window>
+      </agm-marker>
+</agm-map>

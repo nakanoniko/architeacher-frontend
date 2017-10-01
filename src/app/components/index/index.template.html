@@ -1,0 +1,171 @@
+<div class="intro text-center">
+    <img style="width:100%" src="/images/static/index.jpg">
+    <div class="intro-text-wrapper d-flex align-items-center justify-content-center flex-column c-white">
+        <div>
+            <archi-heading
+                    [size]="'huge'"
+                    [text]="'Архитектура - это'">
+            </archi-heading>
+            <archi-heading
+                    style="position:relative; top:-40px;"
+                    [size]="'huge'"
+                    [text]="'застывшая музыка.'">
+            </archi-heading>
+            <archi-heading
+                    style="top:-40px; position:relative"
+                    [text]="'Фридрих Вильгельм Шеллинг'"
+                    [align]="'right'"
+                    [sans]="true">
+            </archi-heading>
+        </div>
+    </div>
+    <div class="intro-bottom">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-10 offset-1" style="height:100px; background-color:lightgrey"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row no-gutters">
+        <div class="col-1"></div>
+        <div class="col-4" style="background:lightgrey">
+            <div class="px-5 mx-5">
+                <img class="svg slideanim" src="/images/static/kolonna-02.svg">
+                <img class="svg slideanim" src="/images/static/kolonna-03.svg">
+                <img class="svg slideanim" src="/images/static/kolonna-04.svg">
+                <img class="svg slideanim" src="/images/static/kolonna-05.svg">
+            </div>
+        </div>
+        <div class="col-6 d-flex flex-row align-items-stretch" style="background:lightgrey">
+            <div class="px-5 d-flex flex-column">
+                <archi-heading [size]="'big'" [text]="'О проекте'" [align]="'left'"></archi-heading>
+                <archi-underline></archi-underline>
+                <archi-text
+                        [text]="'<p>Если вы давно хотели понять, чем отличается классицизм от неоклассицизма, а читать длинные научные статьи не было ни времени, ни желания, ArchiTeacher расскажет об этом максимально быстро, просто и понятно.</p><p>Кроме того, он в той же манере объяснит, что такое фриз, а что – карниз, что выдающегося сделали Чечулин и Остерман, а самое главное – покажет сколько красоты и исторической ценности есть в вашем спальном районе. Может быть, этот привычный дом, мимо которого вы каждый день проходите, на самом деле памятник архитектуры или имеет очень интересную историю? </p><p>А самое главное, ArchiTeacher не стоит на месте и в скором времени, гуляя по Москве, вы сможете узнать, чем знаменит тот самый красивый дом, мимо которого вы сейчас идете!</p>'">
+                </archi-text>
+                <archi-underline></archi-underline>
+                <div class="my-auto">
+                    <archi-heading [text]="'Хотите узнать больше?'"></archi-heading>
+                    <archi-heading [text]="'Вперед!'"></archi-heading>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row no-gutters">
+        <div class="col-1"></div>
+        <div class="col" style="background: lightgrey;">
+            <div style="height:100px"></div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row no-gutters">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="d-flex flex-row">
+                <div style="width:100%">
+                    <flipper
+                            [url]="'/buildings'"
+                            [img]="'/images/static/index-1.jpg'"
+                            [header]="'Дома'"
+                            [title]="'Дома'"
+                            [color]="colorService.colors.red">
+                    </flipper>
+                </div>
+                <div style="width:100%">
+                    <flipper
+                            [url]="'/architects'"
+                            [img]="'/images/static/index-2.jpg'"
+                            [header]="'Архитекторы'"
+                            [title]="'Архитекторы'"
+                            [color]="colorService.colors.blue">
+                    </flipper>
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-end">
+                <div style="width:100%">
+                    <flipper
+                            [url]="'/elements'"
+                            [img]="'/images/static/cardsindex-07.svg'"
+                            [header]="'Элементы'"
+                            [title]="'Элементы'"
+                            [color]="colorService.colors.orange">
+                    </flipper>
+                </div>
+                <div style="width:100%">
+                    <flipper
+                            [url]="'/styles'"
+                            [img]="'/images/static/cardsindex-08.svg'"
+                            [header]="'Стили'"
+                            [title]="'Стили'"
+                            [color]="colorService.colors.green">
+                    </flipper>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row no-gutters">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <archi-carousel
+                    [img]="'img'"
+                    [url_static]="true"
+                    [array]="
+                    [{img:'/images/static/build-12.jpg'},
+                     {img:'/images/static/build-35.jpg'},
+                     {img:'/images/static/build-48.jpg'},
+                     {img:'/images/static/kate_build-4.jpg'},
+                     {img:'/images/static/kate_build-9.jpg'},
+                     {img:'/images/static/kate_build-23.jpg'}]">
+            </archi-carousel>
+        </div>
+    </div>
+</div>
+
+<div class="intro text-center" style="background-color: black;">
+    <img style="width:100%; opacity:.7;" src="/images/static/map.png">
+    <div class="intro-text-wrapper d-flex align-items-center justify-content-center flex-column text-white">
+        <div style="border:1px solid white; border-radius:50%; height:80vh; width:80vh;"
+             class="p-3">
+            <div style="border:1px solid white; border-radius:50%; height:100%; width:100%"
+                 class="d-flex flex-column align-items-center justify-content-center">
+                <archi-heading
+                        [size]="'small'"
+                        [sans]="true"
+                        [text]="'интерактивный гид'">
+                </archi-heading>
+                <archi-heading
+                        [size]="'big'"
+                        [smallHeight]="true"
+                        [text]="'Исследуй столицу'">
+                </archi-heading>
+                <archi-heading
+                        [size]="'big'"
+                        [smallHeight]="true"
+                        [text]="'вместе с'">
+                </archi-heading>
+                <archi-heading
+                        [size]="'big'"
+                        [smallHeight]="true"
+                        [text]="'ArchiTeacher'">
+                </archi-heading>
+                <archi-button
+                        [light]="true"
+                        class="pt-3"
+                        style="width:25%"
+                        [url]="'/buildings'"
+                        [name]="'Начать'"
+                        [color]="colorService.colors.red">
+                </archi-button>
+            </div>
+
+        </div>
+    </div>
+</div>

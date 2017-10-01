@@ -1,0 +1,50 @@
+nav{
+    position:absolute;
+    top:0;
+    background-color:rgba(255,255,255,.7);
+    z-index: 1;
+}
+
+nav, nav a{
+    text-align: center;
+    width:100%;
+}
+
+nav a{
+    display: block;
+}
+
+nav a div, footer div div a{
+    cursor: pointer;
+}
+
+.border-right{
+    border-right:1px solid black;
+}
+
+.border-bottom{
+    border-bottom:1px solid black;
+}
+
+.underline-white{
+    border-bottom:1px solid white;
+}
+
+:host /deep/ a.mat-button{
+    width:100%;
+}
+
+
+.ripple{
+    position:fixed;
+    top:0;
+    left:0;
+    pointer-events: none;
+    height:100vh;
+    width:100vw;
+    margin:0;
+    padding:0;
+    z-index: 1500;
+    background-color:transparent;
+    transition:background-color .6s;
+}

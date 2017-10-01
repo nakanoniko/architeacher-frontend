@@ -1,1 +1,135 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+body{
+    font-family:'Open Sans', sans-serif;
+}
+
+.mat-button{
+    font-family: inherit!important;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Playfair Display', serif;
+}
+
+.c-white, .c-white-hover,
+.c-black, .c-black-hover,
+.c-orange, .c-orange-hover,
+.c-green, .c-green-hover,
+.c-red, .c-red-hover,
+.c-blue, .c-blue-hover,
+.bc-orange, .bc-orange-hover,
+.bc-green, .bc-green-hover,
+.bc-white, .bc-white-hover,
+.bc-black, .bc-black-hover,
+.bc-red, .bc-red-hover,
+.bc-blue, .bc-blue-hover
+{
+    transition: background-color 0.33333333s, color 0.33333333s;
+}
+
+.c-white, .c-white-hover:hover{
+    color:white;
+}
+
+.c-black, .c-black-hover:hover{
+    color:black;
+}
+
+.c-orange, .c-orange-hover:hover{
+    color:#BF7D03;
+}
+
+.c-green, .c-green-hover:hover{
+    color:#67ADBF;
+}
+.c-red, .c-red-hover:hover{
+    color:#3F142B;
+}
+
+.c-blue, .c-blue-hover:hover{
+    color:#0B263F;
+}
+
+
+
+
+.bc-white, .bc-white-hover:hover{
+    background-color:white;
+}
+
+.bc-black, .bc-black-hover:hover{
+    background-color:black;
+}
+
+.bc-orange, .bc-orange-hover:hover {
+    background-color:#c98505;
+}
+
+.bc-green, .bc-green-hover:hover {
+    background-color:#60a5b2;
+}
+
+.bc-red, .bc-red-hover:hover {
+    background-color:#3F142B;
+}
+
+.bc-blue, .bc-blue-hover:hover {
+    background-color:#0B263F;
+}
+
+a, a:hover, a:focus{
+    color:inherit;
+    text-decoration: none;
+}
+
+::selection{
+    background-color:purple;
+    color:white;
+}
+
+.svg{
+    max-width:100%;
+}
+
+.mobile{
+    background-color:black;
+    flex:1;
+    position:relative;
+}
+
+.mobile>div{
+    flex:1;
+    position:relative;
+    width:100%;
+}
+
+.mobile div .image{
+    background: url(/images/static/build-mobile.jpg) no-repeat center;
+    -webkit-background-size: cover;
+    opacity: .5;
+    width:100%;
+    height:100%;
+    background-size: cover;
+}
+
+.mobile div .text{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    color:white;
+}
+
+.d-inline-block{
+    display: inline-block;
+}
+
+.mobile div .text .header{
+    font-size:3.1rem;
+}
+
+.underline-white{
+    border-bottom:1px solid white;
+}

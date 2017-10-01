@@ -1,0 +1,70 @@
+<div style="height:129px;width:100%;"></div>
+
+<archi-heading [size]="'big'" [margin]="'y'" [text]="'Архитектурные стили'"></archi-heading>
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-9">
+            <div class="d-flex flex-row " *ngFor="let pair of getPairs(); let i = index">
+                <div class="d-flex flex-column justify-content-end align-items-center width-100 relative"
+                     [style.border-right]="(i!=0 && i+1 != getPairsLength()) || (i+1==getPairsLength() && styles.length%2==0)?'1px solid black':''">
+                    <div class="d-flex flex-row justify-content-center width-100">
+                        <a class="pt-5 width-big relative text-right"
+                           routerLink="/styles/{{pair[0].id}}"
+                           (click)="navigate($event,'/styles/'+pair[0].id, colorService.colors.green)">
+                            <img class="mb-3 width-img"
+                                 src="/images/uploads/{{pair[0].building_img_path}}">
+                            <div class="img-absolute">
+                                <archi-heading [align]="'left'" [text]="pair[0].name"></archi-heading>
+                                <p class="width-100 text-left">{{pair[0].description}}</p>
+                            </div>
+                        </a>
+                        <div class="d-flex flex-column justify-content-center width-small">
+                            <div class="flex-1" [style.border-right]="i+1==getPairsLength() && styles.length%2==1?'1px solid black':''"></div>
+                            <div class="border-top relative flex-1 push-left-small"
+                                 [style.border-right]="i==0?'1px solid black':''">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-center relative push-left-small width-100 pb-5"
+                         [style.border-right]="i==0?'1px solid black':''">
+                        <div class="date">
+                            <archi-heading [smallHeight]="true" [align]="'left'" [size]="'common'" [text]="pair[0].date | date_approx"></archi-heading>
+                        </div>
+                        <div class="width-small"></div>
+                    </div>
+                </div>
+                <div class="push-top-big relative width-100 d-flex flex-column justify-content-end align-items-center">
+                    <div *ngIf="pair[1]" class="d-flex flex-row justify-content-center width-100">
+                        <div class="width-small d-flex flex-column justify-content-center">
+                            <div class="flex-1"></div>
+                            <div class="flex-1 relative border-top push-right-small"
+                                 [style.border-left]="i+1==getPairsLength()?'1px solid white':''" >
+                            </div>
+                        </div>
+                        <a class="pt-5 width-big relative text-right"
+                           routerLink="/styles/{{pair[1].id}}"
+                           (click)="navigate($event,'/styles/'+pair[1].id, colorService.colors.green)">
+                            <img class="mb-3 width-img"
+                                 src="/images/uploads/{{pair[1].building_img_path}}">
+                            <div class="img-absolute">
+                                <archi-heading [align]="'left'" [text]="pair[1].name"></archi-heading>
+                                <p class="width-100 text-left">{{pair[1].description}}</p>
+                            </div>
+                        </a>
+
+                    </div>
+                    <div *ngIf="pair[1]" class="d-flex flex-row justify-content-center width-100 pb-5">
+                        <div class="width-small"></div>
+                        <div class="date width-big">
+                            <archi-heading [smallHeight]="true" [align]="'left'" [size]="'common'" [text]="pair[1]?.date | date_approx"></archi-heading>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="height:200px"></div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

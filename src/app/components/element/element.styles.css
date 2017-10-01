@@ -1,0 +1,18 @@
+.brick-left, .brick-right{
+    border-top:1px solid black;
+    width:100%;
+}
+
+.brick-left{
+    border-left:1px solid black;
+}
+.brick-right{
+    border-right:1px solid black;
+}
+.underline-grey {
+    border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+.brick-empty, .brick-left, .brick-right{
+    flex:0.5;
+}

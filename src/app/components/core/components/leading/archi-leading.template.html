@@ -1,0 +1,21 @@
+<div class="img" [style.width]="size" [class.margin]="margin">
+    <img [src]="img">
+    <div [class.abs]="scroll" [class.abs-bottom]="!sticky">
+        <div [class.sticky]="scroll" #stickyBlock>
+            <archi-heading
+                    [size]="title_size"
+                    [text]="title"
+                    [smallHeight]="true"
+                    [align]="'left'"
+                    [margin]="'none'">
+            </archi-heading>
+            <archi-heading
+                    [size]="title_info_size"
+                    [smallHeight]="true"
+                    [text]="title_info"
+                    [align]="'left'"
+                    [margin]="'none'">
+            </archi-heading>
+        </div>
+    </div>
+</div>

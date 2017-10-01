@@ -1,0 +1,14 @@
+:host /deep/ div  p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+}
+
+:host /deep/ div blockquote, :host /deep/ div blockquote p{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight:bold;
+    font-size:24px;
+}
+
+:host /deep/ div blockquote{
+    padding:2rem;
+}

@@ -1,0 +1,9 @@
+.border-right{
+    border-right:1px solid black;
+}
+
+.fact{
+    font-family:"Open Sans Condensed", sans-serif;
+    font-weight:bold;
+    font-style: italic;
+}

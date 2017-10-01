@@ -1,0 +1,103 @@
+<div style="height:129px;width:100%;"></div>
+
+<archi-heading
+        [text]="element?.name"
+        [size]="'huge'"
+        [align]="'center'"
+        [margin]="'y'">
+</archi-heading>
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col">&nbsp;</div>
+        <div class="col-2 d-flex flex-column justify-content-end align-items-stretch">
+            <div class="brick-empty"></div>
+            <div class="brick-left"></div>
+        </div>
+        <div class="col-5">
+            <img class="mb-5 svg" *ngIf="element" [src]="'/images/uploads/'+element?.img_path" alt="{{element?.name}}">
+            <archi-underline [text]="'Годы возникновения'" [align]="'center'"></archi-underline>
+            <div class="text-center my-3">
+                <archi-heading [text]="element?.date | date_approx"></archi-heading>
+            </div>
+        </div>
+        <div class="col-2 d-flex flex-column justify-content-end align-items-stretch">
+            <div class="brick-empty"></div>
+            <div class="brick-right"></div>
+        </div>
+        <div class="col">&nbsp;</div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col">&nbsp;</div>
+        <div class="col-4">
+            <archi-underline [text]="'Стили применения'"></archi-underline>
+            <div class="mb-3" *ngFor="let style of element?.styles">
+                <archi-button
+                        [name]="style.name"
+                        [color]="colorService.colors.green"
+                        [url]="'/styles/'+style.id">
+                </archi-button>
+            </div>
+        </div>
+        <div class="col-1">&nbsp;</div>
+        <div class="col-4 text-right">
+            <archi-underline
+                    [text]="'Места размещения'"
+                    [align]="'right'"
+            ></archi-underline>
+            <div *ngFor="let place of element?.places">
+                <div class="pb-3 mb-3" [class.underline-grey]="element?.places[element?.places.length-1]!=place">
+                    <archi-heading
+                            [text]="place.name"
+                            [align]="'right'">
+                    </archi-heading>
+                </div>
+            </div>
+        </div>
+        <div class="col">&nbsp;</div>
+    </div>
+</div>
+<archi-heading
+        [align]="'center'"
+        [text]="'Характеристика элемента'"
+        [size]="'big'"
+        [margin]="'b'">
+</archi-heading>
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col">&nbsp;</div>
+        <div class="col-7">
+            <archi-text [text]="element?.text"></archi-text>
+        </div>
+        <div class="col">&nbsp;</div>
+    </div>
+</div>
+
+<archi-heading *ngIf="element?.examples.length>0"
+        [align]="'center'"
+        [text]="'Примеры'"
+        [size]="'big'"
+        [margin]="'b'">
+</archi-heading>
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-10 offset-1">
+            <archi-carousel
+                    *ngIf="element"
+                    [array]="element?.examples"
+                    [base]="'building'"
+                    [title]="'title'"
+                    [title_info]="'title_info'"
+                    [img]="'img_path'"
+                    [url]="'buildings'"
+                    [id]="'id'"
+                    [color]="colorService.colors.red">
+            </archi-carousel>
+        </div>
+    </div>
+</div>
