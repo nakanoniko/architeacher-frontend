@@ -72,7 +72,7 @@ export class AppComponent extends Base implements OnInit{
         private rippleService: RippleService,
         private router: Router,
         private snackBar: MdSnackBar,
-        private colorService: ColorService,
+        public colorService: ColorService,
         private backendService: BackendService
     ) { super(rippleService, router, backendService); }
 

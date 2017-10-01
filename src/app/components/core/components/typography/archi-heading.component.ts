@@ -51,7 +51,7 @@ import {Component, Input} from "@angular/core";
     `],
     template: '<div [ngClass]="getClasses()" [ngStyle]="getStyles()">{{text}}</div>'
 }) export class ArchiHeadingComponent{
-    @Input('text') private text: string = '';
+    @Input('text') public text: string = '';
     @Input('size') private size: string = 'default';
     @Input('condensed') private condensed: boolean = false;
     @Input('align') private align: string = 'center';

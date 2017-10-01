@@ -10,7 +10,7 @@ import {Component, Input} from "@angular/core";
     `],
     template:'<div class="underline" [ngStyle]="getStyle()">{{text}}</div>'
 }) export class ArchiUnderlineComponent {
-    @Input('text') private text: string = '';
+    @Input('text') public text: string = '';
     @Input('align') private align : string = 'left';
 
     getStyle(){

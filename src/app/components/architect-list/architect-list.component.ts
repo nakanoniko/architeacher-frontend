@@ -42,7 +42,7 @@ export class GridBase{
 }) export class GridA extends GridBase{
     @Input('array') array: Array<Architect>;
     constructor(
-        private colorService:ColorService,
+        public colorService:ColorService,
     ){ super() }
 
 }
@@ -100,7 +100,7 @@ export class GridBase{
 }) export class GridB extends GridBase{
     @Input('array') array: Array<Architect>;
     constructor(
-        private colorService:ColorService,
+        public colorService:ColorService,
     ){super()}
 }
 
@@ -163,7 +163,7 @@ export class GridBase{
     @Input('array') array: Array<Architect>;
 
     constructor(
-        private colorService:ColorService,
+        public colorService:ColorService,
     ){super()}
 }
 
@@ -195,7 +195,7 @@ export class ArchitectListComponent extends Base implements OnInit{
     constructor(
         private rippleService: RippleService,
         private router: Router,
-        private colorService: ColorService,
+        public colorService: ColorService,
         private backendService: BackendService,
         private title:Title
     ) { super(rippleService,router, backendService) }

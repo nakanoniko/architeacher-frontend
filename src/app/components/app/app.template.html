@@ -2,15 +2,15 @@
 
 <nav class="d-flex flex-row align-items-center pt-1 pb-3">
     <a routerLink="/buildings" class="c-red-hover border-right"
-       (click)="navigate($event, url='/buildings', colorService.colors.red)">
+       (click)="navigate($event, '/buildings', colorService.colors.red)">
         <archi-heading [text]="'дома'" ></archi-heading>
     </a>
     <a routerLink="/styles" class="c-green-hover"
-       (click)="navigate($event, url='/styles', colorService.colors.green)">
+       (click)="navigate($event, '/styles', colorService.colors.green)">
         <archi-heading [text]="'стили'" ></archi-heading>
     </a>
     <a class="d-flex flex-column">
-        <a routerLink="/" (click)="navigate($event, url='/', colorService.colors.black)" class="border-bottom">
+        <a routerLink="/" (click)="navigate($event, '/', colorService.colors.black)" class="border-bottom">
             <archi-heading [text]="'ArchiTeacher'" [size]="'big'"></archi-heading>
         </a>
         <div (click)="randomPage($event)">
@@ -18,11 +18,11 @@
         </div>
     </a>
     <a  routerLink="/architects" class="c-blue-hover border-right"
-        (click)="navigate($event, url='/architects', colorService.colors.blue)">
+        (click)="navigate($event, '/architects', colorService.colors.blue)">
         <archi-heading [text]="'архитекторы'" ></archi-heading>
     </a>
     <a  routerLink="/elements" class="c-orange-hover"
-        (click)="navigate($event, url='/elements', colorService.colors.orange)">
+        (click)="navigate($event, '/elements', colorService.colors.orange)">
         <archi-heading [text]="'элементы'" ></archi-heading>
     </a>
 </nav>
@@ -44,29 +44,29 @@
     <div class="row underline-white pb-5">
         <div class="col-3">
             <a routerLink="/buildings"
-               (click)="navigate($event, url='/buildings', colorService.colors.red)">
+               (click)="navigate($event, '/buildings', colorService.colors.red)">
                 <archi-heading [align]="'left'" [text]="'дома'" ></archi-heading>
             </a>
             <a routerLink="/styles"
-               (click)="navigate($event, url='/styles', colorService.colors.green)">
+               (click)="navigate($event, '/styles', colorService.colors.green)">
                 <archi-heading [align]="'left'" [text]="'стили'" ></archi-heading>
             </a>
             <a  routerLink="/architects"
-                (click)="navigate($event, url='/architects', colorService.colors.blue)">
+                (click)="navigate($event, '/architects', colorService.colors.blue)">
                 <archi-heading [align]="'left'" [text]="'архитекторы'" ></archi-heading>
             </a>
             <a  routerLink="/elements"
-                (click)="navigate($event, url='/elements', colorService.colors.orange)">
+                (click)="navigate($event, '/elements', colorService.colors.orange)">
                 <archi-heading [align]="'left'" [text]="'элементы'" ></archi-heading>
             </a>
         </div>
         <div class="col-3">
             <a routerLink="/"
-            (click)="navigate($event, url='/', colorService.colors.black)">
+            (click)="navigate($event, '/', colorService.colors.black)">
                 <archi-heading [align]="'left'" [text]="'о проекте'"></archi-heading>
             </a>
             <a routerLink="/about"
-            (click)="navigate($event, url='/about', colorService.colors.black)">
+            (click)="navigate($event, '/about', colorService.colors.black)">
                 <archi-heading [align]="'left'" [text]="'об авторах'"></archi-heading>
             </a>
         </div>

@@ -1,17 +1,17 @@
-import {Component, HostListener, Input, OnInit, ViewChild} from "@angular/core";
+import {Component, HostListener, Input, OnInit, ViewChild} from '@angular/core';
 @Component({
-    selector:'archi-leading',
-    templateUrl:'./archi-leading.template.html',
-    styleUrls:['./archi-leading.styles.css']
+    selector: 'archi-leading',
+    templateUrl: './archi-leading.template.html',
+    styleUrls: ['./archi-leading.styles.css']
 }) export class ArchiLeadingComponent implements OnInit{
-    @Input('size') private size: string = '100%';
-    @Input('img') private img: string;
-    @Input('title') private title:string;
-    @Input('title_info') private title_info:string;
-    @Input('title_size') private title_size:string = 'huge';
-    @Input('title_info_size') private title_info_size:string = 'big';
-    @Input('scroll') private scroll:boolean = true;
-    @Input('margin') private margin:boolean = true;
+    @Input('size') public size = '100%';
+    @Input('img') public img: string;
+    @Input('title') public title: string;
+    @Input('title_info') public title_info: string;
+    @Input('title_size') public title_size = 'huge';
+    @Input('title_info_size') public title_info_size = 'big';
+    @Input('scroll') public scroll = true;
+    @Input('margin') public margin = true;
     @ViewChild('stickyBlock') private textBlock;
 
     private imgElement: HTMLImageElement;
@@ -21,9 +21,9 @@ import {Component, HostListener, Input, OnInit, ViewChild} from "@angular/core";
     }
 
 
-    @HostListener("window:scroll",[])
+    @HostListener('window:scroll', [])
     onWindowScroll(){
-        if(!scroll) return;
+        if (!scroll) return;
         this.textBlock.nativeElement.style.top = (window.innerHeight - this.textBlock.nativeElement.clientHeight) + 'px';
     }
 }

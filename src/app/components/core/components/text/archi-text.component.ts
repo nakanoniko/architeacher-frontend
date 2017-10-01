@@ -1,8 +1,8 @@
-import {Component, Input} from "@angular/core";
+import {Component, Input} from '@angular/core';
 @Component({
-    styleUrls:['./archi-text.styles.css'],
-    selector:'archi-text',
-    template:'<div [innerHtml]="text"></div>'
+    styleUrls: ['./archi-text.styles.css'],
+    selector: 'archi-text',
+    template: '<div [innerHtml]="text"></div>'
 }) export class ArchiTextComponent{
-    @Input('text') private text: string = '';
+    @Input('text') public text = '';
 }

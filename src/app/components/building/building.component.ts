@@ -30,7 +30,7 @@ export class BuildingComponent extends Base implements OnInit{
     constructor(
         private rippleService: RippleService,
         private router: Router,
-        private colorService: ColorService,
+        public colorService: ColorService,
         private backendService: BackendService,
         private route: ActivatedRoute,
         private title: Title

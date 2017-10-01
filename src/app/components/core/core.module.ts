@@ -1,27 +1,29 @@
 
-import {NgModule} from "@angular/core";
-import {ArchiButtonComponent} from "./components/button/archi-button.component";
-import {MdButtonModule} from "@angular/material";
-import {ArchiTextComponent} from "./components/text/archi-text.component";
-import {ArchiHeadingComponent} from "./components/typography/archi-heading.component";
-import {CommonModule} from "@angular/common";
-import {ArchiUnderlineComponent} from "./components/typography/archi-underline.component";
-import {ArchiLeadingComponent} from "./components/leading/archi-leading.component";
-import {ArchiCarouselComponent} from "./components/carousel/archi-carousel.component";
+import {NgModule} from '@angular/core';
+import {ArchiButtonComponent} from './components/button/archi-button.component';
+import {MdButtonModule} from '@angular/material';
+import {ArchiTextComponent} from './components/text/archi-text.component';
+import {ArchiHeadingComponent} from './components/typography/archi-heading.component';
+import {CommonModule} from '@angular/common';
+import {ArchiUnderlineComponent} from './components/typography/archi-underline.component';
+import {ArchiLeadingComponent} from './components/leading/archi-leading.component';
+import {ArchiCarouselComponent} from './components/carousel/archi-carousel.component';
+import {Base} from './base.component';
 @NgModule({
-    imports:[
+    imports: [
         MdButtonModule,
         CommonModule
     ],
-    declarations:[
+    declarations: [
         ArchiButtonComponent,
         ArchiTextComponent,
         ArchiHeadingComponent,
         ArchiUnderlineComponent,
         ArchiLeadingComponent,
-        ArchiCarouselComponent
+        ArchiCarouselComponent,
+        Base
     ],
-    exports:[
+    exports: [
         ArchiButtonComponent,
         ArchiTextComponent,
         ArchiHeadingComponent,

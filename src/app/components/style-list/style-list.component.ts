@@ -67,7 +67,7 @@ export class StyleListComponent extends Base implements OnInit{
     constructor(
         private rippleService: RippleService,
         private router: Router,
-        private colorService: ColorService,
+        public colorService: ColorService,
         private backendService: BackendService,
         private title:Title
     ) { super(rippleService,router, backendService) }

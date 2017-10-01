@@ -11,7 +11,7 @@ import $ from 'jquery';
     styleUrls: ['./index.styles.css']
 }) export class IndexComponent extends Base{
     constructor(
-        private colorService: ColorService,
+        public colorService: ColorService,
         private backendService: BackendService,
         private router: Router,
         private rippleService: RippleService

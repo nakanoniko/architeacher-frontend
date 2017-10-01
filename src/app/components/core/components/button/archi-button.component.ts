@@ -8,7 +8,7 @@ import {BackendService} from "../../services/backend.service";
     selector:'archi-button'
 }) export class ArchiButtonComponent {
     @Input('color') private color: string = 'transparent';
-    @Input('name') private name: string = '';
+    @Input('name') public name: string = '';
     @Input('url') private url: string | UrlTree;
     @Input('light') private light: boolean = false;
     @Input('sans') private sans: boolean = false;
