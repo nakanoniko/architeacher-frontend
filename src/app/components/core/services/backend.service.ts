@@ -16,7 +16,7 @@ export class BackendService{
     promise: Promise<any>;
 
     constructor( private http: Http) {
-        this.api_prefix = 'http://architeacher.io/api';
+        this.api_prefix = '/api';
     }
 
     static get_route(cls){
