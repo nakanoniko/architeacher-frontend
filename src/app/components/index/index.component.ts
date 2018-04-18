@@ -5,6 +5,7 @@ import {BackendService} from '../core/services/backend.service';
 import {Base} from '../core/base.component';
 import {RippleService} from '../core/services/ripple.service';
 import $ from 'jquery';
+import {Title} from '@angular/platform-browser';
 @Component({
     selector: 'index',
     templateUrl: './index.template.html',
@@ -14,7 +15,8 @@ import $ from 'jquery';
         public colorService: ColorService,
         private backendService: BackendService,
         private router: Router,
-        private rippleService: RippleService
+        private rippleService: RippleService,
+        private title:Title
     ){ super(rippleService, router, backendService); }
 
     @HostListener('window:scroll')
@@ -28,4 +30,8 @@ import $ from 'jquery';
             }
         });
     }
+
+  ngOnInit(): void{
+    this.title.setTitle('ArchiTeacher - Ваш персональный учитель архитектуры');
+  }
 }
